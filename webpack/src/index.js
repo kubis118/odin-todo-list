@@ -4,7 +4,12 @@ import {
   createTask,
   getTodayTasks,
   getProjectTasks,
+  toggleCompleteTask,
+  changeTaskPriority,
+  changeTaskProject,
+  changeDueDate,
 } from "./task-operations.js";
+import { renderTasks } from "./DOM-manipulation.js";
 import { tasks } from "./data.js";
 
 const todo = createTask(
@@ -15,7 +20,6 @@ const todo = createTask(
   "high",
   "chores",
 );
+const container = document.querySelector(".container");
 
-console.log(tasks);
-console.log(getTodayTasks(tasks));
-console.log(getProjectTasks(tasks, "inbox"));
+renderTasks(getProjectTasks(tasks, "chores"), container);

@@ -13,6 +13,7 @@ class Task {
 
 function createTask(arrTasks, title, description, dueDate, priority, project) {
   const task = new Task(title, description, dueDate, priority, project);
+  task.finished = false;
   task.id = getUniqueId();
 
   arrTasks.push(task);
@@ -37,4 +38,41 @@ function getProjectTasks(arrTasks, project) {
   });
 }
 
-export { Task, createTask, getTodayTasks, getProjectTasks };
+function toggleCompleteTask(arrTasks, taskId) {
+  const task = arrTasks.find((task) => task.id == taskId);
+
+  if (task.finished) {
+    task.finished = false;
+  } else {
+    task.finished = true;
+  }
+}
+
+function changeTaskPriority(arrTasks, taskId, priority) {
+  const task = arrTasks.find((task) => task.id == taskId);
+
+  task.priority = priority;
+}
+
+function changeTaskProject(arrTasks, taskId, project) {
+  const task = arrTasks.find((task) => task.id == taskId);
+
+  task.project = project;
+}
+
+function changeDueDate(arrTasks, taskId, dueDate) {
+  const task = arrTasks.find((task) => task.id == taskId);
+
+  task.dueDate = dueDate;
+}
+
+export {
+  Task,
+  createTask,
+  getTodayTasks,
+  getProjectTasks,
+  toggleCompleteTask,
+  changeTaskPriority,
+  changeTaskProject,
+  changeDueDate,
+};
