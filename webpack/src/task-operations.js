@@ -1,7 +1,7 @@
 import { getUniqueId } from "./data.js";
 
 class Task {
-  constructor(title, description, dueDate, priority, project) {
+  constructor(title, description, dueDate, priority, project = "inbox") {
     this.title = title;
     this.description = description;
     this.dueDate = dueDate;
@@ -13,22 +13,23 @@ class Task {
 
 function createTask(arrTasks, title, description, dueDate, priority, project) {
   const task = new Task(title, description, dueDate, priority, project);
-  task.finished = false;
   task.id = getUniqueId();
 
   arrTasks.push(task);
 }
 
-function getTodayTasks(arrTasks) {
+function getTodayDate() {
   const tdDate = new Date();
   const day = tdDate.getDate();
   const month = tdDate.getMonth() + 1;
   const year = tdDate.getFullYear();
 
-  const date = `${day}.${month}.${year}`;
+  return `${day}.${month}.${year}`;
+}
 
+function getTodayTasks(arrTasks) {
   return arrTasks.filter((task) => {
-    return task.dueDate === date;
+    return task.dueDate === getTodayDate();
   });
 }
 

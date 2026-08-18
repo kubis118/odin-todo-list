@@ -5,7 +5,7 @@ const tasks = [
     description: "",
     dueDate: "15.8.2026",
     priority: "medium",
-    project: "inbox",
+    project: "chores",
     finished: true,
   },
   {
@@ -21,9 +21,9 @@ const tasks = [
     id: 2,
     title: "Do dishes",
     description: "",
-    dueDate: "17.8.2026",
+    dueDate: "18.8.2026",
     priority: "low",
-    project: "inbox",
+    project: "chores",
     finished: false,
   },
   {
@@ -32,7 +32,7 @@ const tasks = [
     description: "",
     dueDate: "17.8.2026",
     priority: "medium",
-    project: "inbox",
+    project: "chores",
     finished: true,
   },
   {

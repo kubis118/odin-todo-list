@@ -7,12 +7,32 @@
   </head>
   <body>
     <section class="side-bar">
-      <button id="btn-add-task">Add Task</button>
+      <button id="btn-add-task" popovertarget="add-task-dialog">
+        Add Task
+      </button>
       <button id="btn-inbox">Inbox</button>
       <button id="btn-today">Today</button>
 
       <section class="projects">My Projects</section>
     </section>
     <section class="container"></section>
+
+    <dialog id="add-task-dialog" popover="">
+      <form action="" method="get" class="add-task-form">
+        <input
+          type="text"
+          name="task-title"
+          id="task-title"
+          placeholder="Task Name"
+        />
+        <div class="container-task-btns">
+          <input type="date" name="task-due-date" id="task-due-date" />
+          <button id="btn-task-project" type="button">Project</button>
+          <button id="btn-task-priority" type="button">Priority</button>
+          <button type="submit" id="btn-submit-task">Save</button>
+          <button>X</button>
+        </div>
+      </form>
+    </dialog>
   </body>
 </html>

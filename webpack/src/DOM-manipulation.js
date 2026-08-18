@@ -1,4 +1,4 @@
-function renderTasks(arrTasks, container) {
+function renderTasks(arrTasks) {
   const div = document.createElement("div");
   div.classList.add("tasks-container");
 
@@ -6,7 +6,7 @@ function renderTasks(arrTasks, container) {
     div.appendChild(renderSingleTask(element));
   });
 
-  container.append(div);
+  return div;
 }
 
 function renderSingleTask(taskObj) {
